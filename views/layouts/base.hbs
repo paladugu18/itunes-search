@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iTunes Search</title>
+    <link rel="stylesheet" href="/styles/base.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="form-content">
+            <h2>Search iTunes Store</h2>
+            <div>
+                <form action='/searchitunes' method='post'>
+                    <input type="text" name="term" placeholder="search songs" required/>
+                    <select name="media">
+                        <option selected="selected" value="movie">Movie</option>
+                        <option value="music">Music</option>
+                        <option value="podcast">Podcast</option>
+                        <option value="musicVideo">Music Video</option>
+                    </select>
+                    <select>
+                        <option value="AU">Australia</option>
+                        <option value="CA">Canada</option>
+                        <option value="CN">China</option>
+                        <option value="IN">India</option>
+                        <option value="GB">United Kingdom</option>
+                        <option selected="selected" value="US">United States</option>
+                    </select>
+                    <input class="button" type="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+        {{{body}}}
+    </div>
+</body>
+
+</html>

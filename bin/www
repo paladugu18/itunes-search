@@ -1,0 +1,24 @@
+const app = require('../index');
+const log = require('../lib/logger');
+
+// If no port is specified, chooses the default port.
+const port = process.env.PORT || 3000;
+app.set('port', port);
+
+// Handles errors that occur during application start up.
+const onError = (error) => {
+  switch (error.code) {
+    case 'EACCES':
+      log.error({ err: error }, `${port} requires elevated privileges.`);
+      break;
+    case 'EADDRINUSE':
+      log.error({ err: error }, `${port} is already in use`);
+      break;
+    default:
+      throw error;
+  }
+};
+
+app.listen(app.get('port'), () => {
+  log.info(`Server listening on port ${port}...`);
+}).on('error', onError);

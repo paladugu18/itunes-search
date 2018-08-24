@@ -1,0 +1,94 @@
+@import "bourbon";
+@import "neat";
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+@mixin border-box() {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+$neat-grid: ( columns:12,gutter:1rem,direction:ltr,rows:8);
+
+*, body {
+    @include border-box();
+    font: 18px/1.5em 'karla',sans-serif;
+}
+
+h2 {
+    font-size: 1.25em;
+    color: #eee;
+}
+
+a {
+    color: #B81010;
+    text-decoration: none;
+    &:hover {
+        color: darken(#B81010,20%);
+    }
+}
+
+.wrap {
+    margin: 0px 20px;
+    @include grid-container;
+}
+
+.form-content {
+    @include grid-column(12);
+    justify-content: center;
+    background-color: #333;
+    height: auto;
+    margin-bottom: 15px;
+    direction: ltr;
+    padding: 1em;
+    text-align: center;
+}
+
+.results-container {
+    @include grid-column(4);
+    background-color: #ddd;
+    padding: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.artwork {
+    @include grid-column(4);
+    margin-bottom: 1rem;
+}
+
+.details {
+    @include grid-column(8);
+}
+
+.audio {
+    @include grid-column(12);
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: gray;
+    text-decoration: none;
+    background-clip: padding-box;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 0.7em 1em;
+    &:hover {
+        background-color: lighten(#A19292,15%);
+        box-shadow: 1px 1px 1px #5E5B5B,1px 1px 1px darken(#242222,10%);
+    }
+}
+
+.intro{
+    @include grid-column(12);
+    background-color: #ddd;
+    padding: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}

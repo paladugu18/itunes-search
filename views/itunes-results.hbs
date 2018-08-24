@@ -1,0 +1,30 @@
+<div>
+    {{#if result.results}} {{#each result.results}}
+    <div class="results-container">
+        <img class="artwork" src="{{artworkUrl100}}" alt="ArtworkURL for {{trackName}}">
+        <div class="details">
+            <h3><a href="{{trackViewUrl}}" target="_blank">{{trackName}}</a></h3>
+            <h3> <a href="{{artistViewUrl}}" target="_blank">{{artistName}}</a> </h3>
+            <div>
+                <h3>{{currency}} {{trackPrice}}</h3>
+                <h3>
+                    <script>
+                        var date = new Date('{{releaseDate}}');
+                        document.write(date.toDateString());
+                    </script>
+                </h3>
+            </div>
+        </div>
+        <div class="audio">
+            <audio controls style=" width: 95%">
+                <source src="{{previewUrl}}" type="audio/x-m4a">
+                <p>Your browser doesn't support HTML5 audio. Here is a <a href="{{previewUrl}}">link to the audio</a> instead.</p>
+            </audio>
+        </div>
+    </div>
+    {{/each}} {{else}}
+    <div>
+        <p<strong>No matching results found.</strong></p>
+    </div>
+    {{/if}}
+</div>

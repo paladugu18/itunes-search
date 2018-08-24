@@ -1,0 +1,8 @@
+coverage/
+logs/
+node_modules/
+public/
+.DS_Store
+.nyc_output/
+.vscode
+
