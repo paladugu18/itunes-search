@@ -1,4 +1,4 @@
-# node-workshop
+# node-project
 
 This application is built on Node.js. It searches the iTunes Store using iTunes API by track name, artist name, or collection name.
 
